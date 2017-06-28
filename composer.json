@@ -1,0 +1,21 @@
+{
+    "name": "stephenharris/phpqif",
+    "description": "A simple PHP library for writing QIF files",
+		"version": "0.1.0",
+    "type": "library",
+    "keywords": ["qif"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Stephen Harris",
+            "email": "contact@stephenharris.info",
+						"homepage": "http://stephenharris.info"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"StephenHarris\\QIF\\": "src/"}
+    },
+    "require-dev": {
+        "phpunit/phpunit": "5.7"
+    }
+}

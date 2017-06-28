@@ -1,0 +1,33 @@
+!Type:Cash
+D01/11/2016
+T9.33
+LExpress Checkout
+SExpress Checkout
+$10
+SFee
+$-0.67
+CX
+Pinvoice-3027: Express Checkout Payment - #AMA63142DF230151S
+^
+!Type:Cash
+D01/11/2016
+T38.44
+LExpress Checkout
+SExpress Checkout
+$40
+SFee
+$-1.56
+CX
+Pinvoice-3028: Express Checkout Payment - #93672946MA543893H
+^
+!Type:Cash
+D01/11/2016
+T-9.48
+LExpress Checkout
+SExpress Checkout
+$-10
+SFee
+$0.52
+CX
+Pinvoice-123: Payment Refund - #5P432542KC758251V
+^
