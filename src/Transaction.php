@@ -2,10 +2,10 @@
 
 namespace StephenHarris\QIF;
 
+use Carbon\Carbon;
+
 class Transaction
 {
-
-
     private $type = null;
 
     private $date = null;
@@ -31,7 +31,7 @@ class Transaction
         $this->type = $type;
     }
 
-    public function setDate( \DateTime $date )
+    public function setDate( Carbon $date )
     {
         $this->date = $date;
         return $this;
@@ -163,5 +163,79 @@ class Transaction
         $this->memo = $memo;
         return $this;
     }
+
+    /**
+     * @return null
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @return Carbon|null
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * @return null
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @return null
+     */
+    public function getAmount()
+    {
+        return $this->amount;
+    }
+
+    /**
+     * @return null
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @return array
+     */
+    public function getSplits()
+    {
+        return $this->splits;
+    }
+
+    /**
+     * @return null
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
+     * @return null
+     */
+    public function getAddress()
+    {
+        return $this->address;
+    }
+
+    /**
+     * @return null
+     */
+    public function getMemo()
+    {
+        return $this->memo;
+    }
+
+
 
 }

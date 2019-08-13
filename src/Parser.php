@@ -37,6 +37,10 @@ class Parser
         $this->separator = $separator;
     }
 
+    /**
+     * @param $filePath
+     * @return Parser
+     */
     public static function parseFile( $filePath )
     {
         $parser = new self( file_get_contents( $filePath ) );
@@ -44,15 +48,24 @@ class Parser
         return $parser;
     }
 
+    /**
+     * @return Transaction[]
+     */
+    public function getTransactions()
+    {
+        return $this->transactions;
+    }
+
     public function parse()
     {
-        $line = strtok( $this->fileContent, $this->separator );
+        $line = strtok( preg_replace( "/\xEF\xBB\xBF/", "", $this->fileContent ), $this->separator );
 
         $lastType = null;
         $transaction = new Transaction( $lastType );
         $transactionRaw = "";
         while ( $line !== false )
         {
+            $line = trim( $line );
             $transactionRaw .= $line . $this->separator;
 
             $first = substr( $line, 0, 1 );
@@ -65,7 +78,7 @@ class Parser
                     $transactionRaw = "!Type:" . $lastType;
                     break;
                 case DetailItems::D:
-                    $transaction->setDate( Carbon::parse( $line ) );
+                    $transaction->setDate( Carbon::parse( str_replace( "'", ".", $line ) ) );
                     break;
                 case DetailItems::T:
                 case DetailItems::U:
@@ -98,5 +111,7 @@ class Parser
 
             $line = strtok( $this->separator );
         }
+
+        return $this->getTransactions();
     }
 }
