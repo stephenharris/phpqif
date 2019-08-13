@@ -11,6 +11,7 @@ composer require stephenharris/phpqif
 
 ## Usage
 
+### Writer
 ```php
 // Instatiate the QIF Writer
 $qif = new StephenHarris\QIF\Writer();
@@ -31,4 +32,17 @@ $transaction->setDate( new \DateTime( '2017-12-31' ) )
 $qif->addTransaction( $transaction );
 
 echo $qif;
+```
+
+### Parser
+
+```php
+// Instatiate the QIF Writer
+$qifParser = new StephenHarris\QIF\Parser( $filePath );
+$qifParser->parse();
+
+foreach( $qifParser->getTransactions() as $transaction )
+{
+    // your code
+}
 ```
