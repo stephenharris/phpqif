@@ -108,7 +108,7 @@ class Transaction
             $this->renderIfNotNull( 'L', $this->category ),
             $this->renderSplits(),
             $this->renderIfNotNull( 'C', $this->status ),
-            $this->renderIfNotNull( 'P', $this->description ),
+            $this->renderIfNotNull( 'M', $this->description ),
             '^',
         ];
 
