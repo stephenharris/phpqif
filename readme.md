@@ -17,9 +17,9 @@ composer require stephenharris/phpqif
 $qif = new StephenHarris\QIF\Writer();
 
 // Create a new transaction
-$transaction = new Transaction( Transaction::CASH );
+$transaction = new Transaction( StephenHarris\QIF\Enums\HeaderLines::CASH );
 
-$transaction->setDate( new \DateTime( '2017-12-31' ) )
+$transaction->setDate( new \Carbon\Carbon( '2017-12-31' ) )
 	->setDescription( 'invoice-123: Some Payment' )
 	->setAmount( 68.99 )
 	->setCategory( 'Sales' )
